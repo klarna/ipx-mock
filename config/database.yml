@@ -1,23 +1,17 @@
 production:
   adapter: postgresql
   encoding: unicode
-  database: ipx_mock_development
+  database: ipx_mock_production
   pool: 5
-  username: ipx_mock
-  password: password1
 
 development:
   adapter: postgresql
   encoding: unicode
   database: ipx_mock_development
   pool: 5
-  username: ipx_mock
-  password: password1
 
 test:
   adapter: postgresql
   encoding: unicode
   database: ipx_mock_test
   pool: 5
-  username: ipx_mock
-  password: password1
