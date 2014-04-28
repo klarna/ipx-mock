@@ -6,7 +6,7 @@ class MessagesController < ApplicationController
 
   def index
     to = params[:to]
-    after = params[:after].try(:to_date) || 1000.years.ago
+    after = params[:after].try(:to_time) || 1000.years.ago
 
     @sms_list = Message.where(:to => to).where("created_at >= '#{after}'")
   end
