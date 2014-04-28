@@ -3,6 +3,8 @@ production:
   encoding: unicode
   database: ipx_mock_production
   pool: 5
+  user: ipx_mock
+  password: banana
 
 development:
   adapter: postgresql
