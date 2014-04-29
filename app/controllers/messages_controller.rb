@@ -12,7 +12,6 @@ class MessagesController < ApplicationController
   end
 
   def wsdl
-    
+   render :template => 'messages/wsdl.xml', :layout => false
   end
-
 end
