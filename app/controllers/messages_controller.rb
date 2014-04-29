@@ -12,6 +12,6 @@ class MessagesController < ApplicationController
   end
 
   def wsdl
-   render :template => 'messages/wsdl.xml', :layout => false
+   render :text => File.read('app/views/messages/wsdl.xml'), :content_type => 'application/xml', :layout => false
   end
 end
