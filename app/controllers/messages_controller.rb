@@ -11,4 +11,8 @@ class MessagesController < ApplicationController
     @sms_list = Message.where(:to => to).where("created_at >= '#{after}'")
   end
 
+  def wsdl
+    
+  end
+
 end

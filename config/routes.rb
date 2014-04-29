@@ -7,8 +7,8 @@ IpxMock::Application.routes.draw do
 
   resources :messages
 
-  post 'api/services2/SmsApi52' => 'messages#create'
-  get  'api/services2/SmsApi52' => 'home#index'
+  get  'api/services2/SmsApi52' => 'messages#wsdl'
+
 
   # Example of regular route:
   #get 'sms' => 'sms#index'
