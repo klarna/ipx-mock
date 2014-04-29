@@ -71,7 +71,7 @@
     </binding>
     <service name="SmsApiService">
         <port name="SmsApi52" binding="tns:SmsApiBinding">
-            <soap:address location="http://ipx-mock.herokuapp.com/messages/create"/>
+            <soap:address location="http://ipx-mock.herokuapp.com/messages"/>
         </port>
     </service>
 </definitions>
