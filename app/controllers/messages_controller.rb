@@ -1,9 +1,12 @@
 class MessagesController < ApplicationController
 
   def create
+
+    body = request.body.string
+
     puts '@@@@@@@@@@@@@@@@'
     puts params
-    puts request.body
+    puts body
     puts '@@@@@@END@@@@@@@'
 
     @sms = Message.create!(:from => params[:originatingAddress], :to => params[:destinationAddress], :body => params[:userData], :identifier => params[:correlationId])
