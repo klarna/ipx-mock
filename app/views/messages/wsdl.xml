@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://ipx-mock.herokuapp.com/api/services/smsapi52" xmlns:typens="http://ipx-mock.herokuapp.com/api/services/smsapi52/types" targetNamespace="http://ipx-mock.herokuapp.com/api/services/smsapi52">
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://ipx.com/api/services/smsapi52" xmlns:typens="http://ipx.com/api/services/smsapi52/types" targetNamespace="http://ipx.com/api/services/smsapi52">
     <types>
-        <xsd:schema targetNamespace="http://ipx-mock.herokuapp.com/api/services/smsapi52/types" elementFormDefault="qualified">
+        <xsd:schema targetNamespace="http://ipx.com/api/services/smsapi52/types" elementFormDefault="qualified">
             <xsd:element name="SendRequest">
                 <xsd:complexType>
                     <xsd:sequence>
