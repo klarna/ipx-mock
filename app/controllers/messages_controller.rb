@@ -7,9 +7,12 @@ class MessagesController < ApplicationController
     puts '@@@@@@@@@@@@@@@@'
     puts params
     puts body
-    puts '@@@@@@END@@@@@@@'
+    puts '@@@@@@@@@@@@@@@'
+    parsed_params = Savon::SOAP::XML.parse(request.body.string)
+    puts parsed_params
+    puts '@@@@@@@@@@@@@@@'
 
-    @sms = Message.create!(:from => params[:originatingAddress], :to => params[:destinationAddress], :body => params[:userData], :identifier => params[:correlationId])
+    @sms = Message.create!(:from => parsed_params[:originatingAddress], :to => parsed_params[:destinationAddress], :body => parsed_params[:userData], :identifier => parsed_params[:correlationId])
 
   end
 

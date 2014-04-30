@@ -29,7 +29,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
 gem 'faraday'
-
+gem 'savon', '~> 2.0'
 gem 'pry'
 
 group :doc do
