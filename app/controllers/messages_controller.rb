@@ -1,5 +1,3 @@
-require 'savon'
-
 class MessagesController < ApplicationController
 
   def create
