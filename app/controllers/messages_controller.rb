@@ -15,7 +15,7 @@ class MessagesController < ApplicationController
     puts parsed_params
     puts '@@@@@@@@@@@@@@@'
 
-    @sms = Message.create!(:from => parsed_params[:originatingAddress], :to => parsed_params[:destinationAddress], :body => parsed_params[:userData], :identifier => parsed_params[:correlationId])
+    @sms = Message.create!(:from => parsed_params["originatingAddress"], :to => parsed_params["destinationAddress"], :body => parsed_params["userData"], :identifier => parsed_params["correlationId"])
   end
 
   def index
