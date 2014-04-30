@@ -8,7 +8,7 @@ class MessagesController < ApplicationController
     puts body
     puts '@@@@@@@@@@@@@@@'
 
-    crack = Crack::Xml.parse(request.body.string)
+    crack = Crack::XML.parse(request.body.string)
     puts crack
     puts '@@@@@@@@@@@@@@@'
     parsed_params = crack["soap:Envelope"]["soap:Body"]["SendRequest"]
