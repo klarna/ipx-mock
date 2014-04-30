@@ -1,19 +1,23 @@
+require 'savon'
+
 class MessagesController < ApplicationController
 
   def create
 
     body = request.body.string
-
     puts '@@@@@@@@@@@@@@@@'
     puts params
     puts body
     puts '@@@@@@@@@@@@@@@'
-    parsed_params = Savon::SOAP::XML.parse(request.body.string)
+
+    crack = Crack::Xml.parse(request.body.string)
+    puts crack
+    puts '@@@@@@@@@@@@@@@'
+    parsed_params = crack["soap:Envelope"]["soap:Body"]["SendRequest"]
     puts parsed_params
     puts '@@@@@@@@@@@@@@@'
 
     @sms = Message.create!(:from => parsed_params[:originatingAddress], :to => parsed_params[:destinationAddress], :body => parsed_params[:userData], :identifier => parsed_params[:correlationId])
-
   end
 
   def index
