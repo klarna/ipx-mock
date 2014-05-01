@@ -3,7 +3,6 @@ class MessagesController < ApplicationController
   def create
     crack = Crack::XML.parse(request.body.string)
     parsed_params = crack["soap:Envelope"]["soap:Body"]["SendRequest"]
-    puts parsed_params
 
     @sms = Message.create!(:from => parsed_params["originatingAddress"], :to => parsed_params["destinationAddress"], :body => parsed_params["userData"], :identifier => parsed_params["correlationId"])
   end
