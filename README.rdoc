@@ -1,3 +1,6 @@
 == README
 
-This is the ipx mock 
+This is a mock for an IPX service used to test sms message sending.
+The mock provides two actions.
+1) <b>post requests to /messages </b>- Post requests that matches the wsdl which is provided at /api/services2/SmsApi52. This action will save the message to the local postgreSQL.
+2) <b>get requests to /messages </b>- Filters the messages in local postgreSQL by the two prameters that are provided in the request - :to (the destination phone number) and :after (the date from which to look for, which is optional)

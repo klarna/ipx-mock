@@ -7,7 +7,10 @@ class MessagesController < ApplicationController
     @parsed_params = crack["soap:Envelope"]["soap:Body"]["SendRequest"]
 
     unless duplicate_message?
-      @sms = Message.create!(:from => @parsed_params["originatingAddress"], :to => @parsed_params["destinationAddress"], :body => @parsed_params["userData"], :identifier => @parsed_params["correlationId"])
+      @sms = Message.create!(:from => @parsed_params["originatingAddress"],
+                             :to => @parsed_params["destinationAddress"],
+                             :body => @parsed_params["userData"],
+                             :identifier => @parsed_params["correlationId"])
     end
   end
 
@@ -15,7 +18,7 @@ class MessagesController < ApplicationController
     to = params[:to]
     after = params[:after].try(:to_time) || 1000.years.ago
 
-    @sms_list = Message.where(:to => to).where("created_at >= '#{after}'")
+    @sms_list = Message.to(to).created_after(after)
   end
 
   def wsdl
@@ -25,6 +28,6 @@ class MessagesController < ApplicationController
   private
 
   def duplicate_message?
-    Message.where(:body => @parsed_params["userData"]).where("created_at >= '#{DUPLICATE_INTERVAL.seconds.ago}'").any?
+    Message.where(:body => @parsed_params["userData"]).created_after(DUPLICATE_INTERVAL.seconds.ago).any?
   end
 end

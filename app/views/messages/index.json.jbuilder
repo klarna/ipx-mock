@@ -1,3 +1,1 @@
-json.array!(@sms_list) do |sms|
-  json.partial!("message", :message => sms)
-end
+json.array! @sms_list, :to, :from, :body, :identifier
