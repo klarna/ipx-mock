@@ -10,7 +10,9 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'faraday'
 gem 'crack', '~> 0.1.8'
+gem 'has_scope'
 gem 'pry'
+
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

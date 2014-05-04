@@ -48,6 +48,7 @@ GEM
     execjs (2.0.2)
     faraday (0.9.0)
       multipart-post (>= 1.2, < 3)
+    has_scope (0.5.1)
     hike (1.2.3)
     i18n (0.6.9)
     jbuilder (1.5.3)
@@ -145,6 +146,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   crack (~> 0.1.8)
   faraday
+  has_scope
   jbuilder (~> 1.2)
   jquery-rails
   pg
