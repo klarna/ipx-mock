@@ -22,9 +22,9 @@ class MessagesController < ApplicationController
    render :text => File.read('app/views/messages/wsdl.xml'), :content_type => 'application/xml', :layout => false
   end
 
-  private 
-  
-  def duplicate_message
+  private
+
+  def duplicate_message?
     Message.where(:body => @parsed_params["userData"]).where("created_at >= '#{DUPLICATE_INTERVAL.seconds.ago}'").any?
   end
 end
